@@ -1,0 +1,12 @@
+{
+  "extends": "@fengshangwuqi/ts-config/base",
+  "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "rootDir": ".",
+    "outDir": "typings",
+    "baseUrl": "."
+  },
+
+  "exclude": ["node_modules", "typings"]
+}

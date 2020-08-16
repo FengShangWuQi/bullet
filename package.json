@@ -1,0 +1,57 @@
+{
+  "name": "bullet",
+  "private": true,
+  "author": "fengshangwuqi <fengshangwuqi@gmail.com>",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --write '**/*.{js,ts,tsx,json,md}'",
+    "lint": "eslint '**/*.{js,ts,tsx}'",
+    "test": "jest --coverage",
+    "tsc": "tsc",
+    "ncu": "ncu -u && lerna exec -- ncu -u",
+    "pkg:clean": "lerna exec rimraf dist",
+    "pkg:add": "ts-node packages/pkgkit/bin/pkgkit.js add",
+    "pkg:build": "lerna run prepare && lerna exec pkgkit build",
+    "pkg:r": "lerna version patch --no-commit-hooks --yes"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged",
+      "pre-push": "yarn test && yarn tsc",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "./packages/eslint-config"
+    ],
+    "ignorePatterns": [
+      "node_modules",
+      "dist"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "jsxBracketSameLine": true,
+    "arrowParens": "avoid"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "7.11.0",
+    "@types/jest": "26.0.9",
+    "jest": "26.4.0",
+    "lerna": "3.22.1"
+  },
+  "license": "MIT"
+}
