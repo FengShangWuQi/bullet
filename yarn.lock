@@ -1125,6 +1125,11 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
+"@fengshangwuqi/utils@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@fengshangwuqi/utils/-/utils-1.0.8.tgz#54315a16b7569c5f92269658f61b56d80f3a24f3"
+  integrity sha512-P6771+O/kHOlno+l8oVq0+9TOhP0S1sL7keTXSCmfX8/0dv9/Db2QjC0U6eMmAenpq0OL3/ODsgGC5+VYd2SuQ==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"

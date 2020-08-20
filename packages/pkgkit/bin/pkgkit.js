@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-require("..").cli();
+(async () => {
+  await require("..").cli();
+})();

@@ -39,7 +39,8 @@
     ],
     "ignorePatterns": [
       "node_modules",
-      "dist"
+      "dist",
+      "typings"
     ]
   },
   "prettier": {
