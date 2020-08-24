@@ -22,7 +22,7 @@
     "@types/cross-spawn": "6.0.2",
     "@types/fs-extra": "9.0.1",
     "@types/yargs": "15.0.5",
-    "ts-node": "8.10.2"
+    "ts-node": "9.0.0"
   },
   "license": "MIT",
   "files": [

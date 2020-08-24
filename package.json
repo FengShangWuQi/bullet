@@ -51,7 +51,7 @@
   "devDependencies": {
     "@babel/preset-env": "7.11.0",
     "@types/jest": "26.0.10",
-    "jest": "26.4.0",
+    "jest": "26.4.2",
     "lerna": "3.22.1"
   },
   "license": "MIT"
