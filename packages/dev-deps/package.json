@@ -1,6 +1,6 @@
 {
   "name": "@fengshangwuqi/dev-deps",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "author": "fengshangwuqi <fengshangwuqi@gmail.com>",
   "publishConfig": {
     "access": "public"
