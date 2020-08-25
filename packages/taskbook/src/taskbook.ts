@@ -139,17 +139,23 @@ class Taskbook {
     message.success(`Edit Task ${item.board}-${id}`);
   }
 
-  deleteItem(id: string) {
-    this.validateID(id);
+  deleteItem(ids: string) {
+    let data = this.data;
 
-    const { [id]: item, ...rest } = this.data;
+    ids.split(",").forEach(id => {
+      this.validateID(id);
 
-    storage.setData({
-      ...rest,
+      const { [id]: item, ...rest } = data;
+
+      data = rest;
+
+      withWrap();
+      message.success(`Delete Task ${item.board}-${id}`);
     });
 
-    withWrap();
-    message.success(`Delete Task ${item.board}-${id}`);
+    storage.setData({
+      ...data,
+    });
   }
 
   cleanItems({ board }: { board?: string }) {

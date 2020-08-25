@@ -80,11 +80,11 @@ export const cli = () => {
   });
 
   y.command({
-    command: "delete [id]",
-    describe: "Delete Item",
+    command: "delete [ids]",
+    describe: "Delete Items",
     aliases: "rm",
     handler: (argv: any) => {
-      tb.deleteItem(argv.id);
+      tb.deleteItem(argv.ids);
     },
   });
 
