@@ -1,13 +1,10 @@
 {
   "name": "@fengshangwuqi/taskbook",
   "version": "1.0.17",
-  "description": "在终端友好地管理你的 notes 和 tasks",
+  "description": "在终端友好地管理你的 tasks",
   "author": "fengshangwuqi <fengshangwuqi@gmail.com>",
   "bin": {
     "tb": "bin/taskbook.js"
-  },
-  "scripts": {
-    "test": "ts-node bin/taskbook.js clear -b todo"
   },
   "publishConfig": {
     "access": "public"
