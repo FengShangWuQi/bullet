@@ -1,7 +1,10 @@
 {
-  "name": "bullet",
   "private": true,
+  "name": "bullet",
   "author": "fengshangwuqi <fengshangwuqi@gmail.com>",
+  "keywords": [
+    "package"
+  ],
   "workspaces": [
     "packages/*"
   ],
@@ -9,7 +12,7 @@
     "format": "prettier --write '**/*.{js,ts,tsx,json,md}'",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "test": "jest --coverage",
-    "tsc": "tsc",
+    "generate": "ts-node script.ts",
     "ncu": "ncu -u && lerna exec -- ncu -u",
     "pkg:clean": "lerna exec rimraf dist",
     "pkg:add": "ts-node packages/pkgkit/bin/pkgkit.js add",
@@ -24,7 +27,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && pretty-quick --staged",
-      "pre-push": "yarn test && yarn tsc",
+      "pre-push": "yarn test && tsc",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -50,7 +53,10 @@
   },
   "devDependencies": {
     "@babel/preset-env": "7.11.0",
+    "@types/fs-extra": "9.0.1",
     "@types/jest": "26.0.10",
+    "chalk": "4.1.0",
+    "fs-extra": "9.0.1",
     "jest": "26.4.2",
     "lerna": "3.22.1"
   },
