@@ -17,7 +17,7 @@
     "yargs": "16.0.3"
   },
   "devDependencies": {
-    "@types/fs-extra": "9.0.1",
+    "@types/fs-extra": "9.0.2",
     "@types/signale": "1.4.1",
     "ts-node": "9.0.0"
   },
