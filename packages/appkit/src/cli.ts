@@ -9,21 +9,29 @@ export const cli = () => {
     .version()
     .help();
 
+  y.command("new", `new [rootPath] [starterPath]`);
   y.command("dev", "app dev");
   y.command("build", "app build");
   y.command("release", "app release");
 
   const argv = yargs.argv;
   const action = argv._[0];
-  const app = argv._[1];
 
   switch (action) {
+    case "new":
+      appkit(action, {});
+      break;
     case "dev":
     case "build":
     case "release":
-      appkit(action, app);
+      appkit(action, { app: argv._[1] });
       break;
     default:
       break;
   }
 };
+
+appkit("new", {
+  directory: "hello",
+  starterRepo: "fengshangwuqi",
+});
