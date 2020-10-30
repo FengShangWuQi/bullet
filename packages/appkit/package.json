@@ -13,12 +13,12 @@
     "cross-spawn": "7.0.3",
     "dotenv": "8.2.0",
     "fs-extra": "9.0.1",
-    "yargs": "16.0.3"
+    "yargs": "16.1.0"
   },
   "devDependencies": {
     "@types/cross-spawn": "6.0.2",
     "@types/fs-extra": "9.0.2",
-    "@types/yargs": "15.0.8",
+    "@types/yargs": "15.0.9",
     "ts-node": "9.0.0"
   },
   "license": "MIT",
