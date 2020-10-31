@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import signale from "signale";
+import * as logger from "@fengshangwuqi/logger";
 
 import { storage } from "./storage";
 import {
@@ -10,7 +11,7 @@ import {
   validatePriority,
   validateStatus,
 } from "./task";
-import { message, isUndefined, withWrap } from "./utils";
+import { isUndefined, withWrap } from "./utils";
 
 signale.config({ displayLabel: false });
 
@@ -25,7 +26,7 @@ class Taskbook {
   validateID(id: string) {
     if (!(id && this.data[id])) {
       withWrap();
-      message.error(`id ${id} illegal`);
+      logger.error(`id ${id} illegal`);
       process.exit(1);
     }
   }
@@ -69,7 +70,7 @@ class Taskbook {
   }) {
     if (!description) {
       withWrap();
-      message.error("must have description");
+      logger.error("must have description");
       process.exit(1);
     }
     if (!isUndefined(priority)) {
@@ -87,7 +88,7 @@ class Taskbook {
     storage.setData({ ...this.data, [item.id]: item });
 
     withWrap();
-    message.success(`craete Task ${item.board}-${item.id}`);
+    logger.success(`craete Task ${item.board}-${item.id}`);
   }
 
   updateItem({
@@ -107,7 +108,7 @@ class Taskbook {
 
     if ([board, description, priority, status].every(isUndefined)) {
       withWrap();
-      message.error("edit must have one argv.");
+      logger.error("edit must have one argv.");
       process.exit(1);
     }
 
@@ -136,7 +137,7 @@ class Taskbook {
     });
 
     withWrap();
-    message.success(`Edit Task ${item.board}-${id}`);
+    logger.success(`Edit Task ${item.board}-${id}`);
   }
 
   deleteItem(ids: string | number) {
@@ -152,7 +153,7 @@ class Taskbook {
         data = rest;
 
         withWrap();
-        message.success(`Delete Task ${item.board}-${id}`);
+        logger.success(`Delete Task ${item.board}-${id}`);
       });
 
     storage.setData({

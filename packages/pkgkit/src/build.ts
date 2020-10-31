@@ -59,7 +59,7 @@ export const build = async () => {
           banner: pkg.bin ? "#!/usr/bin/env node" : "",
         },
       ],
-      external: Object.keys(pkg.dependencies || {}),
+      external: [...Object.keys(pkg.dependencies || {}), "path"],
       plugins: [
         commonjs(),
         nodeResolve({

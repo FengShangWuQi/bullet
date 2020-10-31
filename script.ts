@@ -1,5 +1,5 @@
 import { outputFile, readdir } from "fs-extra";
-import chalk from "chalk";
+import * as logger from "@fengshangwuqi/logger";
 
 import pkg from "./package.json";
 
@@ -12,5 +12,5 @@ import pkg from "./package.json";
 
   await outputFile(`${process.cwd()}/README.md`, `${title}\n\n${content}`);
 
-  console.log(chalk.green("success".toUpperCase()), "generate readme");
+  console.log(logger.success("generate readme"));
 })();

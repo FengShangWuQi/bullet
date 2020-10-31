@@ -3,8 +3,7 @@ import { remove, pathExists } from "fs-extra";
 import execa from "execa";
 import { join } from "path";
 import dotenv from "dotenv";
-
-import { warnLog, infoLog, successLog, errLog } from "./utils";
+import * as logger from "@fengshangwuqi/logger";
 
 export const appkit = async (
   action: "dev" | "build" | "release" | "new",
@@ -34,14 +33,14 @@ export const appkit = async (
 
         if (isTargetDirExists) {
           await remove(targetDir);
-          warnLog(`remove ${targetDir}`);
+          logger.warn(`remove ${targetDir}`);
         }
 
-        infoLog(`Creating ${directory} from git: ${url}`);
+        logger.info(`Creating ${directory} from git: ${url}`);
 
         await gitClone([url, targetDir]);
 
-        successLog(`Created ${directory}`);
+        logger.success(`Created ${directory}`);
 
         await remove(join(targetDir, ".git"));
 
@@ -57,7 +56,9 @@ export const appkit = async (
     const pkg = require(pkgPath);
 
     if (!pkg?.appkit?.[action]) {
-      errLog(`package.json not exists, or appkit ${action} script not exists`);
+      logger.error(
+        `package.json not exists, or appkit ${action} script not exists`,
+      );
       return;
     }
 

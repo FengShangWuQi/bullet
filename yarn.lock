@@ -912,7 +912,7 @@
 
 "@commitlint/cli@11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/cli/download/@commitlint/cli-11.0.0.tgz#698199bc52afed50aa28169237758fa14a67b5d3"
+  resolved "https://registry.npm.taobao.org/@commitlint/cli/download/@commitlint/cli-11.0.0.tgz?cache=0&sync_timestamp=1599988776054&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Fcli%2Fdownload%2F%40commitlint%2Fcli-11.0.0.tgz#698199bc52afed50aa28169237758fa14a67b5d3"
   integrity sha1-aYGZvFKv7VCqKBaSN3WPoUpntdM=
   dependencies:
     "@babel/runtime" "^7.11.2"
@@ -937,7 +937,7 @@
 
 "@commitlint/ensure@^11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/ensure/download/@commitlint/ensure-11.0.0.tgz#3e796b968ab5b72bc6f8a6040076406306c987fb"
+  resolved "https://registry.npm.taobao.org/@commitlint/ensure/download/@commitlint/ensure-11.0.0.tgz?cache=0&sync_timestamp=1599988776761&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Fensure%2Fdownload%2F%40commitlint%2Fensure-11.0.0.tgz#3e796b968ab5b72bc6f8a6040076406306c987fb"
   integrity sha1-Pnlrloq1tyvG+KYEAHZAYwbJh/s=
   dependencies:
     "@commitlint/types" "^11.0.0"
@@ -950,7 +950,7 @@
 
 "@commitlint/format@^11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/format/download/@commitlint/format-11.0.0.tgz#ac47b0b9ca46540c0082c721b290794e67bdc51b"
+  resolved "https://registry.npm.taobao.org/@commitlint/format/download/@commitlint/format-11.0.0.tgz?cache=0&sync_timestamp=1599988776454&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Fformat%2Fdownload%2F%40commitlint%2Fformat-11.0.0.tgz#ac47b0b9ca46540c0082c721b290794e67bdc51b"
   integrity sha1-rEewucpGVAwAgschspB5Tme9xRs=
   dependencies:
     "@commitlint/types" "^11.0.0"
@@ -989,12 +989,12 @@
 
 "@commitlint/message@^11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/message/download/@commitlint/message-11.0.0.tgz#83554c3cbbc884fd07b473593bc3e94bcaa3ee05"
+  resolved "https://registry.npm.taobao.org/@commitlint/message/download/@commitlint/message-11.0.0.tgz?cache=0&sync_timestamp=1599988778820&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Fmessage%2Fdownload%2F%40commitlint%2Fmessage-11.0.0.tgz#83554c3cbbc884fd07b473593bc3e94bcaa3ee05"
   integrity sha1-g1VMPLvIhP0HtHNZO8PpS8qj7gU=
 
 "@commitlint/parse@^11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/parse/download/@commitlint/parse-11.0.0.tgz#d18b08cf67c35d02115207d7009306a2e8e7c901"
+  resolved "https://registry.npm.taobao.org/@commitlint/parse/download/@commitlint/parse-11.0.0.tgz?cache=0&sync_timestamp=1599988750670&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Fparse%2Fdownload%2F%40commitlint%2Fparse-11.0.0.tgz#d18b08cf67c35d02115207d7009306a2e8e7c901"
   integrity sha1-0YsIz2fDXQIRUgfXAJMGoujnyQE=
   dependencies:
     conventional-changelog-angular "^5.0.0"
@@ -1021,7 +1021,7 @@
 
 "@commitlint/rules@^11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/rules/download/@commitlint/rules-11.0.0.tgz#bdb310cc6fc55c9f8d7d917a22b69055c535c375"
+  resolved "https://registry.npm.taobao.org/@commitlint/rules/download/@commitlint/rules-11.0.0.tgz?cache=0&sync_timestamp=1599988750499&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Frules%2Fdownload%2F%40commitlint%2Frules-11.0.0.tgz#bdb310cc6fc55c9f8d7d917a22b69055c535c375"
   integrity sha1-vbMQzG/FXJ+NfZF6IraQVcU1w3U=
   dependencies:
     "@commitlint/ensure" "^11.0.0"
@@ -1031,12 +1031,12 @@
 
 "@commitlint/to-lines@^11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/to-lines/download/@commitlint/to-lines-11.0.0.tgz#86dea151c10eea41e39ea96fa4de07839258a7fe"
+  resolved "https://registry.npm.taobao.org/@commitlint/to-lines/download/@commitlint/to-lines-11.0.0.tgz?cache=0&sync_timestamp=1599988750837&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Fto-lines%2Fdownload%2F%40commitlint%2Fto-lines-11.0.0.tgz#86dea151c10eea41e39ea96fa4de07839258a7fe"
   integrity sha1-ht6hUcEO6kHjnqlvpN4Hg5JYp/4=
 
 "@commitlint/top-level@^11.0.0":
   version "11.0.0"
-  resolved "https://registry.npm.taobao.org/@commitlint/top-level/download/@commitlint/top-level-11.0.0.tgz#bb2d1b6e5ed3be56874633b59e1f7de118c32783"
+  resolved "https://registry.npm.taobao.org/@commitlint/top-level/download/@commitlint/top-level-11.0.0.tgz?cache=0&sync_timestamp=1599988751132&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Ftop-level%2Fdownload%2F%40commitlint%2Ftop-level-11.0.0.tgz#bb2d1b6e5ed3be56874633b59e1f7de118c32783"
   integrity sha1-uy0bbl7TvlaHRjO1nh994RjDJ4M=
   dependencies:
     find-up "^5.0.0"
@@ -2873,7 +2873,7 @@ babel-plugin-jest-hoist@^26.5.0:
 
 babel-preset-current-node-syntax@^0.1.3:
   version "0.1.4"
-  resolved "https://registry.npm.taobao.org/babel-preset-current-node-syntax/download/babel-preset-current-node-syntax-0.1.4.tgz#826f1f8e7245ad534714ba001f84f7e906c3b615"
+  resolved "https://registry.npm.taobao.org/babel-preset-current-node-syntax/download/babel-preset-current-node-syntax-0.1.4.tgz?cache=0&sync_timestamp=1604147811125&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbabel-preset-current-node-syntax%2Fdownload%2Fbabel-preset-current-node-syntax-0.1.4.tgz#826f1f8e7245ad534714ba001f84f7e906c3b615"
   integrity sha1-gm8fjnJFrVNHFLoAH4T36QbDthU=
   dependencies:
     "@babel/plugin-syntax-async-generators" "^7.8.4"
@@ -4874,9 +4874,13 @@ get-caller-file@^2.0.1, get-caller-file@^2.0.5:
   integrity sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
 
 get-intrinsic@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/get-intrinsic/download/get-intrinsic-1.0.0.tgz#035ccf14a00ae2eb3d110a00fcd10e74706a8fe7"
-  integrity sha1-A1zPFKAK4us9EQoA/NEOdHBqj+c=
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/get-intrinsic/download/get-intrinsic-1.0.1.tgz?cache=0&sync_timestamp=1604120566582&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fget-intrinsic%2Fdownload%2Fget-intrinsic-1.0.1.tgz#94a9768fcbdd0595a1c9273aacf4c89d075631be"
+  integrity sha1-lKl2j8vdBZWhySc6rPTInQdWMb4=
+  dependencies:
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.1"
 
 get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.2"
@@ -6513,7 +6517,7 @@ lines-and-columns@^1.1.6:
 
 lint-staged@10.5.0:
   version "10.5.0"
-  resolved "https://registry.npm.taobao.org/lint-staged/download/lint-staged-10.5.0.tgz?cache=0&sync_timestamp=1603984924396&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flint-staged%2Fdownload%2Flint-staged-10.5.0.tgz#c923c2447a84c595874f3de696778736227e7a7a"
+  resolved "https://registry.npm.taobao.org/lint-staged/download/lint-staged-10.5.0.tgz?cache=0&sync_timestamp=1604148257123&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flint-staged%2Fdownload%2Flint-staged-10.5.0.tgz#c923c2447a84c595874f3de696778736227e7a7a"
   integrity sha1-ySPCRHqExZWHTz3mlneHNiJ+eno=
   dependencies:
     chalk "^4.1.0"
@@ -7199,7 +7203,7 @@ node-releases@^1.1.61:
 
 nopt@^4.0.1:
   version "4.0.3"
-  resolved "https://registry.npm.taobao.org/nopt/download/nopt-4.0.3.tgz?cache=0&sync_timestamp=1597649993026&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnopt%2Fdownload%2Fnopt-4.0.3.tgz#a375cad9d02fd921278d954c2254d5aa57e15e48"
+  resolved "https://registry.npm.taobao.org/nopt/download/nopt-4.0.3.tgz?cache=0&sync_timestamp=1597649892953&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnopt%2Fdownload%2Fnopt-4.0.3.tgz#a375cad9d02fd921278d954c2254d5aa57e15e48"
   integrity sha1-o3XK2dAv2SEnjZVMIlTVqlfhXkg=
   dependencies:
     abbrev "1"
@@ -9508,7 +9512,7 @@ typedarray@^0.0.6:
 
 typescript@4.0.5:
   version "4.0.5"
-  resolved "https://registry.npm.taobao.org/typescript/download/typescript-4.0.5.tgz?cache=0&sync_timestamp=1604024393629&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-4.0.5.tgz#ae9dddfd1069f1cb5beb3ef3b2170dd7c1332389"
+  resolved "https://registry.npm.taobao.org/typescript/download/typescript-4.0.5.tgz?cache=0&sync_timestamp=1604127568578&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-4.0.5.tgz#ae9dddfd1069f1cb5beb3ef3b2170dd7c1332389"
   integrity sha1-rp3d/RBp8ctb6z7zshcN18EzI4k=
 
 uglify-js@^3.1.4:

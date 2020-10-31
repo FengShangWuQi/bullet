@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "chalk": "4.1.0",
+    "@fengshangwuqi/logger": "1.0.0",
     "dotenv": "8.2.0",
     "execa": "4.1.0",
     "fs-extra": "9.0.1",

@@ -1,0 +1,30 @@
+{
+  "name": "@fengshangwuqi/logger",
+  "version": "1.0.0",
+  "author": "fengshangwuqi <fengshangwuqi@gmail.com>",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "babel src/index.ts --out-file dist/index.cjs.js --presets=@babel/preset-env,@babel/preset-typescript --plugins=@babel/plugin-proposal-class-properties",
+    "prepare": "yarn clean && cross-env NODE_ENV=production yarn build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "chalk": "4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.12.1",
+    "@babel/core": "7.12.3",
+    "@babel/plugin-proposal-class-properties": "7.12.1",
+    "@babel/preset-env": "7.12.1",
+    "@babel/preset-typescript": "7.12.1"
+  },
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "types": "dist/index.d.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js"
+}

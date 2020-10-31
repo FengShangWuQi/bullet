@@ -1,6 +1,6 @@
 import { Item, IItem } from "./item";
 
-import { message } from "./utils";
+import * as logger from "@fengshangwuqi/logger";
 
 export interface ITask extends IItem {
   status: number;
@@ -31,14 +31,14 @@ export class Task extends Item {
 
 export const validatePriority = (priority: any) => {
   if (!Object.values(priorityType).includes(priority)) {
-    message.error("priority illegal");
+    logger.error("priority illegal");
     process.exit(1);
   }
 };
 
 export const validateStatus = (status: any) => {
   if (!Object.values(statusType).includes(status)) {
-    message.error("status illegal");
+    logger.error("status illegal");
     process.exit(1);
   }
 };
