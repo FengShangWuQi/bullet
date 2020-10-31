@@ -11,13 +11,18 @@
   "scripts": {
     "format": "prettier --write '**/*.{js,ts,tsx,json,md}'",
     "lint": "eslint '**/*.{js,ts,tsx}'",
-    "test": "jest --coverage",
+    "test": "jest --coverage && tsc",
     "generate": "ts-node script.ts",
     "ncu": "ncu -u && lerna exec -- ncu -u",
     "pkg:clean": "lerna exec rimraf dist",
-    "pkg:add": "ts-node packages/pkgkit/bin/pkgkit.js add",
+    "pkg:add": "pkgkit add",
     "pkg:build": "lerna run prepare && lerna exec pkgkit build",
     "pkg:r": "lerna version patch --no-commit-hooks --yes"
+  },
+  "appkit": {
+    "dev": "echo appkit dev",
+    "build": "echo appkit build",
+    "release": "echo appkit release"
   },
   "commitlint": {
     "extends": [
@@ -27,7 +32,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && pretty-quick --staged",
-      "pre-push": "yarn test && tsc",
+      "pre-push": "yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

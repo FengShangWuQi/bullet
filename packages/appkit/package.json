@@ -5,15 +5,11 @@
   "bin": {
     "appkit": "bin/appkit.js"
   },
-  "scripts": {
-    "test": "ts-node ./src/cli.ts"
-  },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "chalk": "4.1.0",
-    "cross-spawn": "7.0.3",
     "dotenv": "8.2.0",
     "execa": "4.1.0",
     "fs-extra": "9.0.1",
@@ -21,7 +17,6 @@
     "yargs": "16.1.0"
   },
   "devDependencies": {
-    "@types/cross-spawn": "6.0.2",
     "@types/fs-extra": "9.0.2",
     "@types/hosted-git-info": "3.0.1",
     "@types/yargs": "15.0.9"

@@ -1,15 +1,14 @@
 import hostedGitInfo from "hosted-git-info";
-import { removeSync } from "fs-extra";
-import spawn from "cross-spawn";
+import { remove, pathExists } from "fs-extra";
+import execa from "execa";
 import { join } from "path";
-import child_process from "child_process";
 import dotenv from "dotenv";
 
-import { infoLog, successLog, errLog, run } from "./utils";
+import { warnLog, infoLog, successLog, errLog } from "./utils";
 
-export const appkit = (
+export const appkit = async (
   action: "dev" | "build" | "release" | "new",
-  opts: { app?: string; directory?: string; starterRepo?: string },
+  opts: { app?: string; directory?: string; starterRepo?: string } = {},
 ) => {
   if (action === "new") {
     const { directory, starterRepo } = opts;
@@ -21,7 +20,7 @@ export const appkit = (
       const onlyName = onlyNameRe.test(repo);
 
       if (onlyName) {
-        const userName = getGitConfig("user.name").trim();
+        const { stdout: userName } = await gitConfig("user.name");
         repo = `${userName}/${starterRepo}`;
       }
 
@@ -29,52 +28,74 @@ export const appkit = (
 
       if (info) {
         const url = info?.ssh({ noCommittish: true });
-
-        infoLog(`Creating new starter from git: ${url}`);
-
-        gitClone(url, directory);
-
-        successLog(`Created starter`);
-
         const targetDir = join(process.cwd(), directory);
 
-        removeSync(join(targetDir, ".git"));
+        const isTargetDirExists = await pathExists(targetDir);
 
-        useGit(["init"], { cwd: targetDir });
+        if (isTargetDirExists) {
+          await remove(targetDir);
+          warnLog(`remove ${targetDir}`);
+        }
+
+        infoLog(`Creating ${directory} from git: ${url}`);
+
+        await gitClone([url, targetDir]);
+
+        successLog(`Created ${directory}`);
+
+        await remove(join(targetDir, ".git"));
+
+        await useExeca("git", ["init"], { cwd: targetDir });
       }
     }
   } else {
     const { app } = opts;
+
     const pkgPath = join(process.cwd(), "package.json");
+    const envPath = join(process.cwd(), app ? `.env.${app}` : ".env");
 
     const pkg = require(pkgPath);
 
     if (!pkg?.appkit?.[action]) {
       errLog(`package.json not exists, or appkit ${action} script not exists`);
-      process.exit(1);
+      return;
     }
 
-    const result = dotenv.config({
-      path: join(process.cwd(), app ? `.env.${app}` : ".env"),
-    });
+    const isEnvExists = await pathExists(envPath);
 
-    run(pkg.appkit?.[action], {
-      ...(app && { APP: app }),
-      ...result.parsed,
-    });
+    if (isEnvExists) {
+      const { parsed: envs } = dotenv.config({
+        path: envPath,
+      });
+
+      console.log(envs);
+
+      await spawn(pkg.appkit[action], {
+        env: {
+          ...process.env,
+          ...envs,
+        },
+      });
+
+      return;
+    }
+
+    await spawn(pkg.appkit[action]);
   }
 };
 
-const gitClone = (url: string, directory: string) =>
-  useGit(["clone", url, directory, "--depth=1"]);
+const gitClone = (args: string[]) =>
+  useExeca("git", ["clone", ...args, "--depth=1"]);
 
-const getGitConfig = (key: string) => useGit(["config", "--get", key]);
-
-const useGit = (args: string[], opts: child_process.SpawnOptions = {}) => {
-  const { stdout } = spawn.sync("git", args, {
-    encoding: "utf-8",
-    ...opts,
+const gitConfig = (key: string) =>
+  useExeca("git", ["config", "--get", key], {
+    stdio: "pipe",
   });
 
-  return stdout;
+export const spawn = (cmd: string, opts?: execa.Options) => {
+  const [script, ...args] = cmd.split(/\s+/);
+  return useExeca(script, args, opts);
 };
+
+const useExeca = (script: string, args?: string[], opts?: execa.Options) =>
+  execa(script, args, { stdio: `inherit`, ...opts });
