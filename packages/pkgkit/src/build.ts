@@ -8,7 +8,7 @@ import json from "@rollup/plugin-json";
 import dts from "rollup-plugin-dts";
 
 import { usePkg, outputs } from "./pkg";
-import { successLog, warnLog, spawn } from "./utils";
+import { successLog, warnLog } from "./utils";
 
 const getRootPath = (path: string): string => {
   const lernaJSONFile = join(path, "./lerna.json");
@@ -38,8 +38,6 @@ export const build = async () => {
     warnLog(`exit ${pkg.name as string}`);
     process.exit(0);
   }
-
-  await spawn(`tsc --emitDeclarationOnly --outDir ${root}/${outDir}`);
 
   setPkg({ ...outputs });
 

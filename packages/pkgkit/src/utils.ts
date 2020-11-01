@@ -19,11 +19,6 @@ export const useExeca = (
   opts?: execa.Options,
 ) => execa(script, args, { stdio: `inherit`, ...opts });
 
-export const spawn = (cmd: string, opts?: execa.Options) => {
-  const [script, ...args] = cmd.split(/\s+/);
-  return useExeca(script, args, opts);
-};
-
 export const gitConfig = (key: string) =>
   useExeca("git", ["config", "--get", key], {
     stdio: "pipe",
