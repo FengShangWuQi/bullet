@@ -1,5 +1,4 @@
 import { join, relative } from "path";
-import spawn from "cross-spawn";
 import { pathExists, pathExistsSync } from "fs-extra";
 import { rollup, RollupOptions, OutputOptions } from "rollup";
 import nodeResolve from "@rollup/plugin-node-resolve";
@@ -9,7 +8,7 @@ import json from "@rollup/plugin-json";
 import dts from "rollup-plugin-dts";
 
 import { usePkg, outputs } from "./pkg";
-import { successLog, warnLog } from "./utils";
+import { successLog, warnLog, useExeca } from "./utils";
 
 const getRootPath = (path: string): string => {
   const lernaJSONFile = join(path, "./lerna.json");
@@ -40,7 +39,11 @@ export const build = async () => {
     process.exit(0);
   }
 
-  spawn.sync("tsc", ["--emitDeclarationOnly", "--outDir", `${root}/${outDir}`]);
+  await useExeca("tsc", [
+    "--emitDeclarationOnly",
+    "--outDir",
+    `${root}/${outDir}`,
+  ]);
 
   setPkg({ ...outputs });
 

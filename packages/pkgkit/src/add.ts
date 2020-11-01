@@ -1,19 +1,10 @@
 import { outputJson, outputFile, pathExists } from "fs-extra";
-import spawn from "cross-spawn";
 
-import { successLog, errLog } from "./utils";
-
-const getGitConfig = (key: string) => {
-  const { stdout } = spawn.sync("git", ["config", "--get", key], {
-    encoding: "utf-8",
-  });
-
-  return stdout;
-};
+import { successLog, errLog, gitConfig } from "./utils";
 
 const writePackageJSON = async (pkgName: string, pkgPath: string) => {
-  const userName = getGitConfig("user.name").trim();
-  const userEmail = getGitConfig("user.email").trim();
+  const { stdout: userName } = await gitConfig("user.name");
+  const { stdout: userEmail } = await gitConfig("user.email");
 
   const initPkg = {
     name: `@${userName}/${pkgName}`,

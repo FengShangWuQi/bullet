@@ -10,7 +10,7 @@ enum LogType {
 type ILogType = keyof typeof LogType;
 
 class Logger {
-  msg: string;
+  msg: any;
   static instance: null | Logger;
 
   logTypeStr = {
@@ -20,12 +20,12 @@ class Logger {
     [LogType.ERROR]: chalk.red(LogType.ERROR),
   };
 
-  constructor(msg: string) {
+  constructor(msg: any) {
     this.msg = msg;
   }
 
   withType(type: ILogType) {
-    this.msg = `${this.logTypeStr[type].toLowerCase()} ${this.msg}`;
+    this.msg = `${this.logTypeStr[type].toLowerCase()} ${this.msg as string}`;
     return this;
   }
 
@@ -34,16 +34,16 @@ class Logger {
   }
 }
 
-export const log = (msg: string) => new Logger(msg).output();
+export const log = (msg: any) => new Logger(msg).output();
 
-export const info = (msg: string) =>
+export const info = (msg: any) =>
   new Logger(msg).withType(LogType.INFO).output();
 
-export const success = (msg: string) =>
+export const success = (msg: any) =>
   new Logger(msg).withType(LogType.SUCCESS).output();
 
-export const warn = (msg: string) =>
+export const warn = (msg: any) =>
   new Logger(msg).withType(LogType.WARNING).output();
 
-export const error = (msg: string) =>
+export const error = (msg: any) =>
   new Logger(msg).withType(LogType.ERROR).output();

@@ -12,5 +12,5 @@ import pkg from "./package.json";
 
   await outputFile(`${process.cwd()}/README.md`, `${title}\n\n${content}`);
 
-  console.log(logger.success("generate readme"));
+  logger.success("generate readme");
 })();
