@@ -1,5 +1,5 @@
 import hostedGitInfo from "hosted-git-info";
-import { remove, pathExists } from "fs-extra";
+import { remove, pathExists, writeJson, outputFile } from "fs-extra";
 import execa from "execa";
 import { join } from "path";
 import dotenv from "dotenv";
@@ -37,14 +37,34 @@ export const appkit = async (
         }
 
         logger.info(`Creating ${directory} from git: ${url}`);
-
         await gitClone([url, targetDir]);
 
         logger.success(`Created ${directory}`);
 
         await remove(join(targetDir, ".git"));
-
         await useExeca("git", ["init"], { cwd: targetDir });
+
+        const pkgPath = join(targetDir, "package.json");
+        const isPkgExists = await pathExists(pkgPath);
+
+        if (isPkgExists) {
+          const pkg = require(pkgPath);
+
+          await writeJson(
+            pkgPath,
+            { ...pkg, name: directory },
+            { spaces: "  " },
+          );
+        }
+
+        const docPath = join(targetDir, "README.md");
+        const isDocExists = await pathExists(docPath);
+
+        if (isDocExists) {
+          const content = `> ## ${directory}`;
+
+          await outputFile(docPath, content);
+        }
       }
     }
   } else {
