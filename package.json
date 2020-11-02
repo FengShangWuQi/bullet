@@ -18,7 +18,7 @@
     "pkg:clean": "lerna exec rimraf dist",
     "pkg:add": "pkgkit add",
     "pkg:build": "lerna run prepare && yarn type && lerna exec pkgkit build",
-    "pkg:r": "lerna version patch --no-commit-hooks --yes"
+    "pkg:r": "yarn test && lerna version patch --no-commit-hooks --yes"
   },
   "appkit": {
     "dev": "echo appkit dev",
