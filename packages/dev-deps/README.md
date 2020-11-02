@@ -2,10 +2,6 @@
 dev-deps
 </h1>
 
-<h4 align="center">
-开发必安依赖
-</h4>
-
 ### 安装
 
 ```
@@ -17,9 +13,8 @@ $ npm install @fengshangwuqi/dev-deps -D
 ```json
 {
   "scripts": {
-    "clean": "rimraf public",
+    "clean": "rimraf dist",
     "format": "prettier --write '**/*.{js,ts,tsx,json,md}'",
-    "tsc": "tsc --noEmit",
     "start": "ts-node ./index.ts"
   },
   "commitlint": {
@@ -28,7 +23,7 @@ $ npm install @fengshangwuqi/dev-deps -D
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && pretty-quick --staged",
-      "pre-push": "yarn tsc",
+      "pre-push": "tsc",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

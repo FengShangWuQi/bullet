@@ -30,9 +30,9 @@ $ npm install @fengshangwuqi/appkit -g
 3、运行相应脚本;
 
 ```
-$ appkit release
+$ appkit dev
 
 or
 
-$ appkit release appName
+$ appkit dev appName
 ```

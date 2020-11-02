@@ -2,10 +2,6 @@
 Taskbook
 </h1>
 
-<h4 align="center">
-在终端友好地管理你的 tasks
-</h4>
-
 ### 使用
 
 ```
