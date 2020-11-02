@@ -26,8 +26,6 @@ export const build = async () => {
   const cwd = process.cwd();
   const root = getRootPath(cwd);
 
-  const outDir = "typings";
-
   const [pkg, setPkg] = usePkg();
 
   const indexFile = join(cwd, "index.ts");
@@ -73,7 +71,7 @@ export const build = async () => {
       ],
     },
     {
-      input: join(root, outDir, relative(root, cwd), "index.d.ts"),
+      input: join(root, "typings", relative(root, cwd), "index.d.ts"),
       output: [
         {
           file: join(cwd, outputs.types),

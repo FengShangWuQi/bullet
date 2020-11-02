@@ -8,7 +8,7 @@ export const infoLog = (msg: string) =>
   console.log(`${chalk.blue("info")} ${msg}`);
 
 export const warnLog = (msg: string) =>
-  console.log(`${chalk.yellow("warn")} ${msg}`);
+  console.log(`${chalk.yellow("warning")} ${msg}`);
 
 export const errLog = (msg: string) =>
   console.log(`${chalk.red("error")} ${msg}`);

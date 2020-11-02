@@ -14,9 +14,10 @@
     "test": "jest --coverage && tsc",
     "generate": "ts-node script.ts",
     "ncu": "ncu -u && lerna exec -- ncu -u",
+    "tsc": "tsc --diagnostics false",
     "pkg:clean": "lerna exec rimraf dist",
     "pkg:add": "pkgkit add",
-    "pkg:build": "lerna run prepare && lerna exec pkgkit build",
+    "pkg:build": "lerna run prepare && yarn tsc && lerna exec pkgkit build",
     "pkg:r": "lerna version patch --no-commit-hooks --yes"
   },
   "appkit": {

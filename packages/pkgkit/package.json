@@ -9,8 +9,7 @@
     "clean": "rimraf dist",
     "add": "ts-node bin/pkgkit.js add",
     "build": "ts-node bin/pkgkit.js build",
-    "tsc": "tsc --emitDeclarationOnly --diagnostics false --outDir ../../typings",
-    "prepare": "yarn clean && yarn tsc && cross-env NODE_ENV=production yarn build"
+    "prepare": "yarn clean && cross-env NODE_ENV=production yarn build"
   },
   "publishConfig": {
     "access": "public"
