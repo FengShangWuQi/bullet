@@ -1,6 +1,6 @@
 {
   "name": "@fengshangwuqi/appkit",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "author": "fengshangwuqi <fengshangwuqi@gmail.com>",
   "bin": {
     "appkit": "bin/appkit.js"
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@fengshangwuqi/logger": "1.0.2",
+    "@fengshangwuqi/logger": "1.0.3",
     "dotenv": "8.2.0",
     "execa": "4.1.0",
     "fs-extra": "9.0.1",
