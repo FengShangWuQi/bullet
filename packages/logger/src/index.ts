@@ -11,7 +11,6 @@ type ILogType = keyof typeof LogType;
 
 class Logger {
   msg: any;
-  static instance: null | Logger;
 
   logTypeStr = {
     [LogType.SUCCESS]: chalk.green(LogType.SUCCESS),
