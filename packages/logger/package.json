@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "babel src/index.ts --out-file dist/index.cjs.js --presets=@babel/preset-env,@babel/preset-typescript --plugins=@babel/plugin-proposal-class-properties",
-    "prepare": "yarn clean && cross-env NODE_ENV=production yarn build"
+    "prepare": "cross-env NODE_ENV=production yarn build"
   },
   "publishConfig": {
     "access": "public"
