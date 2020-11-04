@@ -93,6 +93,7 @@ export const appkit = async (
 
       await spawn(pkg.appkit[action], {
         env: {
+          APP: app,
           ...process.env,
           ...envs,
         },
