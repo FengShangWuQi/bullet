@@ -89,14 +89,16 @@ export const appkit = async (
         path: envPath,
       });
 
-      logger.log(envs);
+      const finalEnvs = {
+        APP: app,
+        ...process.env,
+        ...envs,
+      };
+
+      logger.log(finalEnvs);
 
       await spawn(pkg.appkit[action], {
-        env: {
-          APP: app,
-          ...process.env,
-          ...envs,
-        },
+        env: finalEnvs,
       });
 
       return;
