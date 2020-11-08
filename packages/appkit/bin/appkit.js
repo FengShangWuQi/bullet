@@ -1,3 +1,5 @@
 #!/usr/bin/env node
+const pkg = require("../package.json");
+const path = require("path");
 
-require("../dist/index.cjs.js").cli();
+require(path.join("../", pkg.main)).cli();
