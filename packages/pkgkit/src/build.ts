@@ -29,7 +29,6 @@ export const build = async () => {
   const [pkg, setPkg] = usePkg();
 
   const indexFile = join(cwd, "index.ts");
-
   const isIndexExists = await pathExists(indexFile);
 
   if (!isIndexExists) {
@@ -46,12 +45,10 @@ export const build = async () => {
         {
           file: join(cwd, outputs.main),
           format: "cjs",
-          banner: pkg.bin ? "#!/usr/bin/env node" : "",
         },
         {
           file: join(cwd, outputs.module),
           format: "es",
-          banner: pkg.bin ? "#!/usr/bin/env node" : "",
         },
       ],
       external: [...Object.keys(pkg.dependencies || {}), "path"],
