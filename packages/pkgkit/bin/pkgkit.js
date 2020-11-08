@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-(async () => {
-  await require("..").cli();
-})();
+require("../dist/index.cjs.js").cli();
