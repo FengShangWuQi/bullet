@@ -17,7 +17,7 @@
     "yargs": "16.1.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "9.0.2",
+    "@types/fs-extra": "9.0.4",
     "@types/hosted-git-info": "3.0.1",
     "@types/yargs": "15.0.9"
   },
