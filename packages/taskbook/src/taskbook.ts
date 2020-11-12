@@ -11,7 +11,7 @@ import {
   validatePriority,
   validateStatus,
 } from "./task";
-import { isUndefined, withWrap } from "./utils";
+import { isUndefined, withWrap, clearConsole } from "./utils";
 
 signale.config({ displayLabel: false });
 
@@ -235,6 +235,8 @@ class Taskbook {
   }
 
   displayItemsByBoard() {
+    clearConsole();
+
     const data = this.groupByBoard();
 
     Object.keys(data)
