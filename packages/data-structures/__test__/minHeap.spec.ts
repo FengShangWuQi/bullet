@@ -15,11 +15,11 @@ describe("minHeap #data-structures", () => {
       0,
       3,
       2,
-      2,
-      4,
       3,
       4,
       4,
+      4,
+      2,
     ]);
   });
 

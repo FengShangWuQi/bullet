@@ -1,13 +1,9 @@
 import { comparator, swap } from "./utils";
 
-export class Heap<T> {
+export abstract class Heap<T> {
   heapArr: T[];
 
   constructor(arr: T[]) {
-    if (new.target === Heap) {
-      throw new TypeError("Cannot construct Heap instance directly");
-    }
-
     this.heapArr = [...arr];
   }
 
@@ -47,44 +43,12 @@ export class Heap<T> {
     return this.heapArr[this.getParentIndex(childIndex)];
   }
 
-  add(item: T): T[] {
-    this.heapArr.push(item);
-    this.upAdjust();
-
-    return this.heapArr;
+  isEmpty(): boolean {
+    return !this.heapArr.length;
   }
 
-  poll(): T | undefined {
-    if (this.heapArr.length === 0) {
-      return void 0;
-    }
-
-    if (this.heapArr.length === 1) {
-      return this.heapArr.pop() as T;
-    }
-
-    const item = this.heapArr[0];
-
-    this.heapArr[0] = this.heapArr.pop() as T;
-    this.downAdjust();
-
-    return item;
-  }
-
-  sort(visitFn?: () => void): T[] {
-    for (let i = 0; i < this.heapArr.length - 1; i++) {
-      visitFn?.();
-
-      swap(this.heapArr, 0, this.heapArr.length - 1 - i);
-
-      this.downAdjust(0, this.heapArr.length - 1 - i - 1);
-    }
-
-    return this.heapArr;
-  }
-
-  upAdjust(startIndex?: number) {
-    let currentIndex = startIndex || this.heapArr.length - 1;
+  upAdjust(startIndex = this.heapArr.length - 1) {
+    let currentIndex = startIndex;
 
     while (
       this.hasParent(currentIndex) &&
@@ -96,17 +60,17 @@ export class Heap<T> {
     }
   }
 
-  downAdjust(startIndex = 0, endIndex = this.heapArr.length - 1) {
+  downAdjust(startIndex: number, endIndex = this.heapArr.length - 1) {
     let currentIndex = startIndex;
     let nextIndex = 0;
 
     while (
-      this.getLeftChildIndex(currentIndex) <= endIndex &&
-      this.hasLeftChild(currentIndex)
+      this.hasLeftChild(currentIndex) &&
+      this.getLeftChildIndex(currentIndex) <= endIndex
     ) {
       if (
-        this.getRightChildIndex(currentIndex) <= endIndex &&
         this.hasRightChild(currentIndex) &&
+        this.getRightChildIndex(currentIndex) <= endIndex &&
         this.compareFn(
           this.rightChild(currentIndex),
           this.leftChild(currentIndex),
@@ -127,32 +91,18 @@ export class Heap<T> {
     }
   }
 
-  isEmpty(): boolean {
-    return !this.heapArr.length;
-  }
-
-  compareFn(..._: any): boolean {
-    throw new Error(`with no compareFn`);
-  }
-}
-
-export class MinHeap<T> extends Heap<T> {
-  build(visitFn?: () => void): T[] {
-    for (let i = Math.floor(this.heapArr.length / 2 - 1); i >= 0; i--) {
+  sort(visitFn?: () => void): T[] {
+    for (let i = this.heapArr.length - 1; i > 0; i--) {
       visitFn?.();
 
-      this.downAdjust(i);
+      swap(this.heapArr, 0, i);
+
+      this.downAdjust(0, i - 1);
     }
 
     return this.heapArr;
   }
 
-  compareFn(a: T, b: T): boolean {
-    return comparator.lessThan(a, b);
-  }
-}
-
-export class MaxHeap<T> extends Heap<T> {
   build(visitFn?: () => void): T[] {
     for (let i = 1; i <= this.heapArr.length - 1; i++) {
       visitFn?.();
@@ -163,7 +113,27 @@ export class MaxHeap<T> extends Heap<T> {
     return this.heapArr;
   }
 
+  abstract compareFn(a: T, b: T): boolean;
+}
+
+export class MinHeap<T> extends Heap<T> {
   compareFn(a: T, b: T): boolean {
-    return comparator.greaterThan(a, b);
+    return comparator.lessThanOrEqual(a, b);
+  }
+}
+
+export class MaxHeap<T> extends Heap<T> {
+  // build(visitFn?: () => void): T[] {
+  //   for (let i = Math.floor((this.heapArr.length - 2) / 2); i >= 0; i--) {
+  //     visitFn?.();
+
+  //     this.downAdjust(i);
+  //   }
+
+  //   return this.heapArr;
+  // }
+
+  compareFn(a: T, b: T): boolean {
+    return comparator.greaterThanOrEqual(a, b);
   }
 }
