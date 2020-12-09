@@ -15,7 +15,7 @@
     "fs-extra": "9.0.1",
     "os": "0.1.1",
     "signale": "1.4.0",
-    "yargs": "16.1.0"
+    "yargs": "16.2.0"
   },
   "devDependencies": {
     "@types/fs-extra": "9.0.4",
