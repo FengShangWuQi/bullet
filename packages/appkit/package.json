@@ -13,12 +13,10 @@
     "dotenv": "8.2.0",
     "execa": "4.1.0",
     "fs-extra": "9.0.1",
-    "hosted-git-info": "3.0.7",
     "yargs": "16.1.0"
   },
   "devDependencies": {
     "@types/fs-extra": "9.0.4",
-    "@types/hosted-git-info": "3.0.1",
     "@types/yargs": "15.0.9"
   },
   "license": "MIT",

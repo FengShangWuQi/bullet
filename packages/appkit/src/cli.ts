@@ -10,7 +10,6 @@ export const cli = () => {
       .version()
       .help();
 
-    y.command("new", `new [directory] [starterRepo]`);
     y.command("dev", "app dev");
     y.command("build", "app build");
     y.command("release", "app release");
@@ -19,12 +18,6 @@ export const cli = () => {
     const action = argv._[0];
 
     switch (action) {
-      case "new":
-        await appkit(action, {
-          directory: argv._[1],
-          starterRepo: argv._[2],
-        });
-        break;
       case "dev":
       case "build":
       case "release":
