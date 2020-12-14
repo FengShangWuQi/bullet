@@ -16,7 +16,7 @@ export const cli = () => {
 
     const argv = y.argv;
     const action = argv._[0];
-    const pkg = argv._[1];
+    const pkg = argv._[1] as string;
 
     switch (action) {
       case "build": {
