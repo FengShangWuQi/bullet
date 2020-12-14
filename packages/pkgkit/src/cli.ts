@@ -24,7 +24,7 @@ export const cli = () => {
         break;
       }
       case "add": {
-        await add(pkg);
+        await add(pkg as string);
         break;
       }
     }

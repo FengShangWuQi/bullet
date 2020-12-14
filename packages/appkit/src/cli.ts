@@ -21,7 +21,7 @@ export const cli = () => {
       case "dev":
       case "build":
       case "release":
-        await appkit(action, { app: argv._[1] });
+        await appkit(action, { app: argv._[1] as string });
         break;
       default:
         break;
