@@ -1,6 +1,6 @@
 {
   "name": "@fengshangwuqi/ts-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "fengshangwuqi <fengshangwuqi@gmail.com>",
   "main": "base.json",
   "publishConfig": {
