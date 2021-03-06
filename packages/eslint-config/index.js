@@ -41,6 +41,7 @@ module.exports = {
     camelcase: 0,
     "@typescript-eslint/naming-convention": 1,
     "@typescript-eslint/no-floating-promises": [2, { ignoreIIFE: true }],
+    "@typescript-eslint/restrict-template-expressions": 1,
   },
   settings: {
     react: {
