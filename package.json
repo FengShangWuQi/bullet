@@ -9,7 +9,7 @@
     "packages/*"
   ],
   "scripts": {
-    "format": "prettier --write '**/*.{js,ts,tsx,json,md}'",
+    "format": "prettier --write .",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "test": "jest --coverage && tsc",
     "generate": "ts-node script.ts",
