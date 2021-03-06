@@ -14,11 +14,11 @@
     "chalk": "4.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.10",
-    "@babel/core": "7.12.10",
-    "@babel/plugin-proposal-class-properties": "7.12.1",
-    "@babel/preset-env": "7.12.11",
-    "@babel/preset-typescript": "7.12.7"
+    "@babel/cli": "7.13.0",
+    "@babel/core": "7.13.8",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/preset-env": "7.13.9",
+    "@babel/preset-typescript": "7.13.0"
   },
   "license": "MIT",
   "files": [

@@ -12,12 +12,12 @@
     "@fengshangwuqi/logger": "1.0.5",
     "dotenv": "8.2.0",
     "execa": "5.0.0",
-    "fs-extra": "9.0.1",
+    "fs-extra": "9.1.0",
     "yargs": "16.2.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "9.0.6",
-    "@types/yargs": "15.0.12"
+    "@types/fs-extra": "9.0.8",
+    "@types/yargs": "16.0.0"
   },
   "license": "MIT",
   "files": [

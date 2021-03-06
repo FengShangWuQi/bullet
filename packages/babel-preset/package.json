@@ -11,18 +11,18 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "7.12.1",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "7.12.1",
-    "@babel/plugin-proposal-optional-chaining": "7.12.7",
-    "@babel/plugin-transform-runtime": "7.12.10",
-    "@babel/plugin-transform-typescript": "7.12.1",
-    "@babel/runtime-corejs3": "7.12.5"
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.13.8",
+    "@babel/plugin-proposal-optional-chaining": "7.13.8",
+    "@babel/plugin-transform-runtime": "7.13.9",
+    "@babel/plugin-transform-typescript": "7.13.0",
+    "@babel/runtime-corejs3": "7.13.9"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.10",
-    "@babel/core": "7.12.10",
-    "@babel/preset-env": "7.12.11",
-    "@babel/preset-typescript": "7.12.7"
+    "@babel/cli": "7.13.0",
+    "@babel/core": "7.13.8",
+    "@babel/preset-env": "7.13.9",
+    "@babel/preset-typescript": "7.13.0"
   },
   "license": "MIT",
   "files": [
